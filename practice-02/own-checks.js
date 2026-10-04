@@ -1,5 +1,3 @@
-// Мои собственные проверки (минимум три по методичке).
-// Запуск из корня репозитория: node practice-02/own-checks.js
 import {
   addTask,
   setTaskCompleted,
@@ -16,7 +14,6 @@ function makeTasks() {
   ];
 }
 
-// Проверка 1. Удалить задачу, потом добавить новую с тем же id
 let tasks = makeTasks();
 let result = removeTask(tasks, 2);
 tasks = result.tasks;
@@ -24,7 +21,6 @@ result = addTask(tasks, 2, "Вторая заново", "high");
 const ids1 = result.tasks.map((task) => task.id).join(",");
 console.log("Проверка 1:", result.ok === true && ids1 === "1,3,2" ? "ПРОЙДЕНО" : "НЕ ПРОЙДЕНО", "| id:", ids1);
 
-// Проверка 2. Изменить первую и последнюю задачу, середина не должна поменяться
 tasks = makeTasks();
 const middleBefore = tasks[1];
 result = setTaskCompleted(tasks, 1, true);
@@ -37,7 +33,6 @@ const ok2 =
   tasks[2].title === "Третья";
 console.log("Проверка 2:", ok2 ? "ПРОЙДЕНО" : "НЕ ПРОЙДЕНО", "| названия:", result.tasks.map((task) => task.title).join(" / "));
 
-// Проверка 3. Отметить все задачи выполненными по очереди — прогресс 100
 tasks = makeTasks();
 for (const task of makeTasks()) {
   result = setTaskCompleted(tasks, task.id, true);
@@ -46,7 +41,6 @@ for (const task of makeTasks()) {
 const stats = getTaskStats(tasks);
 console.log("Проверка 3:", stats.progress === 100 && stats.pending === 0 ? "ПРОЙДЕНО" : "НЕ ПРОЙДЕНО", "| прогресс:", stats.progress);
 
-// Проверка 4. Название ровно 100 символов — можно, 101 — нельзя
 const title100 = "а".repeat(100);
 const title101 = "а".repeat(101);
 const r100 = addTask([], 5, title100);

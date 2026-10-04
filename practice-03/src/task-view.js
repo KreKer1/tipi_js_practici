@@ -1,7 +1,5 @@
 import { getTaskStats } from "./task-service.js";
 
-// Здесь только создаётся и обновляется разметка. Задачи здесь не меняются.
-
 function getPriorityText(priority) {
   if (priority === "low") {
     return "Низкий";
@@ -20,7 +18,6 @@ export function createTaskElement(task) {
   }
   item.dataset.taskId = task.id;
 
-  // Название выводим через textContent, чтобы HTML в названии не сработал
   const title = document.createElement("h3");
   title.classList.add("task-title");
   title.textContent = task.title;
@@ -37,7 +34,6 @@ export function createTaskElement(task) {
   priority.classList.add("task-priority");
   priority.textContent = getPriorityText(task.priority);
 
-  // Кнопка "Выполнена"
   const toggleButton = document.createElement("button");
   toggleButton.type = "button";
   toggleButton.dataset.action = "toggle";
@@ -47,7 +43,6 @@ export function createTaskElement(task) {
   toggleLabel.textContent = "Выполнена";
   toggleButton.append(toggleLabel);
 
-  // Кнопка "Удалить"
   const deleteButton = document.createElement("button");
   deleteButton.type = "button";
   deleteButton.dataset.action = "delete";
@@ -65,8 +60,6 @@ export function createTaskElement(task) {
 }
 
 export function renderTaskList(listElement, tasks) {
-  // Сначала очищаем список, потом добавляем карточки заново.
-  // Сам ul не удаляем, на нём висит обработчик клика.
   listElement.innerHTML = "";
   for (const task of tasks) {
     const card = createTaskElement(task);

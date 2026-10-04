@@ -1,8 +1,3 @@
-// Функции для работы со списком задач.
-// Здесь нет console.log и нет глобального списка задач.
-// Если данные неправильные, функция возвращает { ok: false, error: "..." }.
-
-// Проверка id. Возвращает текст ошибки или пустую строку, если всё хорошо.
 function checkId(id) {
   if (typeof id !== "number") {
     return "id должен быть числом";
@@ -13,7 +8,6 @@ function checkId(id) {
   return "";
 }
 
-// Проверка названия. Возвращает текст ошибки или пустую строку.
 function checkTitle(title) {
   if (typeof title !== "string") {
     return "Название должно быть строкой";
@@ -95,7 +89,6 @@ export function addTask(tasks, id, title, priority = "medium") {
     return { ok: false, error: "Задача с таким id уже есть" };
   }
 
-  // Новый массив: старые задачи + новая в конце.
   const newTasks = [...tasks, result.task];
   return { ok: true, tasks: newTasks };
 }
@@ -114,7 +107,6 @@ export function setTaskCompleted(tasks, id, completed) {
     return { ok: false, error: "Задача не найдена" };
   }
 
-  // Для нужной задачи создаём новый объект, остальные оставляем как есть.
   const newTasks = tasks.map((task) => {
     if (task.id === id) {
       return { ...task, completed: completed };

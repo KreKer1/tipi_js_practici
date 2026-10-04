@@ -10,7 +10,6 @@ import {
   removeTask,
 } from "./task-service.js";
 
-// Вывод сводки по списку задач
 function printStats(tasks) {
   const { total, completed, pending, progress } = getTaskStats(tasks);
   console.log(`Всего: ${total}; выполнено: ${completed}; осталось: ${pending}`);
@@ -21,17 +20,13 @@ function printStats(tasks) {
   }
 }
 
-// Вывод id всех задач
 function printIds(tasks) {
   const ids = tasks.map((task) => task.id);
   console.log("id задач: [" + ids.join(", ") + "]");
 }
 
-// ===================== ОБЩИЙ СЦЕНАРИЙ =====================
-
 console.log("========== ОБЩИЙ СЦЕНАРИЙ ==========");
 
-// Запоминаем исходные данные, чтобы потом проверить, что они не изменились
 const demoBefore = JSON.stringify(demoTasks);
 
 let currentTasks = demoTasks;
@@ -106,8 +101,6 @@ console.log("\nИтог общего сценария:");
 console.table(currentTasks);
 console.log("Невыполненные id: [" + getPendingTasks(currentTasks).map((task) => task.id).join(", ") + "]");
 console.log("demoTasks не изменился:", JSON.stringify(demoTasks) === demoBefore);
-
-// ===================== ИНДИВИДУАЛЬНЫЙ ВАРИАНТ =====================
 
 console.log(`\n========== ВАРИАНТ ${variantNumber} ==========`);
 

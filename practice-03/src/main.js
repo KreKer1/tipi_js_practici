@@ -12,8 +12,6 @@ const elements = {
   datasetLabel: document.querySelector("#dataset-label"),
 };
 
-// Готовая служебная часть: ?dataset=variant включает данные своего варианта.
-// Наборы не смешиваются, редактировать код для переключения не требуется.
 const isVariant = new URLSearchParams(window.location.search).get("dataset") === "variant";
 const initialTasks = isVariant ? variantTasks : demoTasks;
 let currentTasks = initialTasks.map((task) => ({ ...task }));
@@ -27,11 +25,9 @@ function renderApp() {
   const visibleTasks = getVisibleTasks(currentTasks, currentFilter);
 
   renderTaskList(elements.list, visibleTasks);
-  // Сводка считается по ВСЕМ задачам, а "Показано" — по видимым
   renderSummary(elements.summary, currentTasks, visibleTasks.length);
   renderEmptyState(elements.empty, currentTasks.length, visibleTasks.length);
 
-  // Подсвечиваем активный фильтр
   const filterButtons = elements.filters.querySelectorAll("button[data-filter]");
   for (const button of filterButtons) {
     if (button.dataset.filter === currentFilter) {
@@ -49,7 +45,6 @@ function handleTaskListClick(event) {
     return;
   }
 
-  // closest ищет кнопку вверх по дереву — сработает и при клике по span внутри
   const button = event.target.closest("button[data-action]");
   if (button === null || !elements.list.contains(button)) {
     return;
@@ -65,7 +60,6 @@ function handleTaskListClick(event) {
     return;
   }
 
-  // В dataset всегда строка, поэтому переводим в число и проверяем
   const id = Number(card.dataset.taskId);
   if (!Number.isSafeInteger(id) || id <= 0) {
     elements.message.textContent = "Ошибка: некорректный id задачи.";
@@ -115,8 +109,6 @@ function handleFilterClick(event) {
   renderApp();
 }
 
-// Готовая вспомогательная функция. Сохраняет понятную позицию клавиатурного фокуса
-// после замены карточек. Если карточки больше нет, фокус получает активный фильтр.
 function restoreTaskFocus(id, action) {
   const actionButton = elements.list.querySelector(
     `[data-task-id="${id}"] button[data-action="${action}"]`,
@@ -125,12 +117,9 @@ function restoreTaskFocus(id, action) {
   (actionButton ?? filterButton)?.focus();
 }
 
-// Подписки выполняются один раз. Эти контейнеры не заменяются при перерисовке.
 elements.list.addEventListener("click", handleTaskListClick);
 elements.filters.addEventListener("click", handleFilterClick);
 
-// До реализации renderApp ожидается сообщение о заглушке.
-// try/catch здесь — готовая диагностика старта, а не замена проверки result.ok.
 try {
   renderApp();
 } catch (error) {
