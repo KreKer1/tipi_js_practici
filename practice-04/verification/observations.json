@@ -1,0 +1,280 @@
+{
+  "browser": "157.0.4341.60",
+  "practice4": "Всего: 23. Пройдено: 23. Ошибок: 0.",
+  "common4": [
+    {
+      "ids": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "stats": [
+        "4",
+        "2",
+        "2",
+        "50.0%",
+        "4"
+      ]
+    },
+    {
+      "ids": [
+        1,
+        4,
+        7,
+        10,
+        20
+      ],
+      "stats": [
+        "5",
+        "2",
+        "3",
+        "40.0%",
+        "5"
+      ]
+    },
+    {
+      "ids": [
+        1,
+        4,
+        7,
+        10,
+        20
+      ],
+      "stats": [
+        "5",
+        "2",
+        "3",
+        "40.0%",
+        "5"
+      ]
+    },
+    {
+      "ids": [
+        1,
+        4,
+        7,
+        10,
+        20
+      ],
+      "stats": [
+        "5",
+        "2",
+        "3",
+        "40.0%",
+        "5"
+      ]
+    },
+    {
+      "ids": [
+        1,
+        4,
+        7,
+        10,
+        20
+      ],
+      "stats": [
+        "5",
+        "3",
+        "2",
+        "60.0%",
+        "5"
+      ]
+    },
+    {
+      "ids": [
+        4,
+        7,
+        10,
+        20
+      ],
+      "stats": [
+        "4",
+        "2",
+        "2",
+        "50.0%",
+        "4"
+      ]
+    },
+    {
+      "ids": [
+        4,
+        7,
+        10,
+        20
+      ],
+      "stats": [
+        "4",
+        "2",
+        "2",
+        "50.0%",
+        "4"
+      ]
+    },
+    {
+      "ids": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "stats": [
+        "4",
+        "2",
+        "2",
+        "50.0%",
+        "4"
+      ]
+    }
+  ],
+  "variant4": [
+    {
+      "ids": [
+        11,
+        23,
+        37,
+        41,
+        58,
+        64
+      ],
+      "stats": [
+        "6",
+        "1",
+        "5",
+        "16.7%",
+        "6"
+      ]
+    },
+    {
+      "ids": [
+        11,
+        23,
+        37,
+        41,
+        58,
+        64,
+        75
+      ],
+      "stats": [
+        "7",
+        "1",
+        "6",
+        "14.3%",
+        "7"
+      ]
+    },
+    {
+      "ids": [
+        11,
+        23,
+        37,
+        41,
+        58,
+        64,
+        75
+      ],
+      "stats": [
+        "7",
+        "1",
+        "6",
+        "14.3%",
+        "7"
+      ]
+    },
+    {
+      "ids": [
+        11,
+        23,
+        41,
+        58,
+        64,
+        75
+      ],
+      "stats": [
+        "6",
+        "1",
+        "5",
+        "16.7%",
+        "6"
+      ]
+    },
+    {
+      "ids": [
+        11,
+        23,
+        41,
+        58,
+        64,
+        75
+      ],
+      "stats": [
+        "6",
+        "1",
+        "5",
+        "16.7%",
+        "6"
+      ]
+    },
+    {
+      "ids": [
+        11,
+        23,
+        37,
+        41,
+        58,
+        64
+      ],
+      "stats": [
+        "6",
+        "1",
+        "5",
+        "16.7%",
+        "6"
+      ]
+    }
+  ],
+  "experiments4": [
+    {
+      "emptySubmitCount": 0,
+      "valid": false
+    },
+    {
+      "spaces": "submit получен, но прикладная проверка отклонила значение."
+    },
+    {
+      "correct": "submit.defaultPrevented: true\ntypeof FormData title: string\ntypeof localStorage value: string\n{\n  \"value\": {\n    \"title\": \"Доклад\",\n    \"priority\": \"low\"\n  },\n  \"serialized\": \"{\\\"title\\\":\\\"Доклад\\\",\\\"priority\\\":\\\"low\\\"}\"\n}"
+    },
+    {
+      "read": "JSON прочитан успешно:\n{\n  \"raw\": \"{\\\"title\\\":\\\"Доклад\\\",\\\"priority\\\":\\\"low\\\"}\",\n  \"parsed\": {\n    \"title\": \"Доклад\",\n    \"priority\": \"low\"\n  }\n}"
+    },
+    {
+      "broken": "JSON.parse завершился ошибкой:\nExpected property name or '}' in JSON at position 1 (line 1 column 2)\n{\n  \"raw\": \"{broken-json\"\n}"
+    }
+  ],
+  "keyboard4": "Tab: id→title; начало редактирования→title; Enter на отмене→id.",
+  "debug4": {
+    "pauses": [
+      {
+        "line": 159,
+        "value": "{\"draft\":{\"id\":\"20\",\"title\":\"  Изучить localStorage  \",\"priority\":\"high\"}}"
+      },
+      {
+        "line": 160,
+        "value": "{\"draft\":{\"id\":\"20\",\"title\":\"  Изучить localStorage  \",\"priority\":\"high\"},\"checked\":{\"ok\":true,\"value\":{\"id\":20,\"title\":\"Изучить localStorage\",\"priority\":\"high\"}}}"
+      },
+      {
+        "line": 165,
+        "value": "{\"draft\":{\"id\":\"20\",\"title\":\"  Изучить localStorage  \",\"priority\":\"high\"},\"checked\":{\"ok\":true,\"value\":{\"id\":20,\"title\":\"Изучить localStorage\",\"priority\":\"high\"}},\"result\":{\"ok\":true,\"tasks\":[{\"id\":1,\"title\":\"Изучить функции\",\"completed\":true,\"priority\":\"medium\"},{\"id\":4,\"title\":\"Подготовить модель задач\",\"completed\":false,\"priority\":\"high\"},{\"id\":7,\"title\":\"Проверить методы массивов\",\"completed\":false,\"priority\":\"low\"},{\"id\":10,\"title\":\"Оформить README\",\"completed\":true,\"priority\":\"medium\"},{\"id\":20,\"title\":\"Изучить localStorage\",\"completed\":false,\"priority\":\"high\"}]}}"
+      },
+      {
+        "line": 159,
+        "value": "{\"draft\":{\"id\":\"4\",\"title\":\"Дубликат\",\"priority\":\"high\"}}"
+      },
+      {
+        "line": 160,
+        "value": "{\"draft\":{\"id\":\"4\",\"title\":\"Дубликат\",\"priority\":\"high\"},\"checked\":{\"ok\":false,\"errors\":{\"id\":\"Задача с таким идентификатором уже существует.\"}}}"
+      }
+    ],
+    "stored": "{\"version\":1,\"tasks\":[{\"id\":1,\"title\":\"Изучить функции\",\"completed\":true,\"priority\":\"medium\"},{\"id\":4,\"title\":\"Подготовить модель задач\",\"completed\":false,\"priority\":\"high\"},{\"id\":7,\"title\":\"Проверить методы массивов\",\"completed\":false,\"priority\":\"low\"},{\"id\":10,\"title\":\"Оформить README\",\"completed\":true,\"priority\":\"medium\"},{\"id\":20,\"title\":\"Изучить localStorage\",\"completed\":false,\"priority\":\"high\"}]}"
+  }
+}

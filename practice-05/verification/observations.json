@@ -1,0 +1,220 @@
+{
+  "prediction": "A, B, C, D, E, F; с собственным then: A, B, C, D, E, G, F",
+  "http": [
+    {
+      "route": "/health",
+      "status": 200,
+      "ok": true,
+      "contentType": "application/json; charset=utf-8",
+      "body": "{\"data\":{\"status\":\"ok\"}}"
+    },
+    {
+      "route": "/tasks?completed=false&priority=high",
+      "status": 200,
+      "ok": true,
+      "contentType": "application/json; charset=utf-8",
+      "body": "{\"data\":[{\"id\":4,\"title\":\"Подготовить модель задач\",\"completed\":false,\"priority\":\"high\",\"categoryId\":2},{\"id\":13,\"title\":\"Разобрать Promise\",\"completed\":false,\"priority\":\"high\",\"categoryId\":1},{\"id\":34,\"title\":\"Провести рефакторинг клиента\",\"completed\":false,\"priority\":\"high\",\"categoryId\":2}],\"meta\":{\"total\":3,\"filters\":{\"completed\":false,\"priority\":\"high\",\"categoryId\":null,\"q\":\"\"}}}"
+    },
+    {
+      "route": "/tasks/999",
+      "status": 404,
+      "ok": false,
+      "contentType": "application/json; charset=utf-8",
+      "body": "{\"error\":{\"code\":\"TASK_NOT_FOUND\",\"message\":\"Задача с id 999 не найдена.\",\"details\":{\"id\":999}}}"
+    },
+    {
+      "route": "/debug/error",
+      "status": 503,
+      "ok": false,
+      "contentType": "application/json; charset=utf-8",
+      "body": "{\"error\":{\"code\":\"SERVICE_UNAVAILABLE\",\"message\":\"Учебная имитация временной недоступности сервиса.\"}}"
+    },
+    {
+      "route": "/debug/invalid-json",
+      "status": 200,
+      "ok": true,
+      "contentType": "application/json; charset=utf-8",
+      "body": "{\"data\":"
+    },
+    {
+      "route": "/debug/text",
+      "status": 200,
+      "ok": true,
+      "contentType": "text/plain; charset=utf-8",
+      "body": "Это не JSON."
+    }
+  ],
+  "timing": {
+    "sequential": [
+      321.9,
+      310,
+      321.9
+    ],
+    "parallel": [
+      156.7,
+      153.2,
+      158.8
+    ]
+  },
+  "eventLoop": "A: синхронный код\nB: начало async-функции\nC: конец синхронного кода\nD: обработчик Promise\nE: продолжение после await\nF: задача таймера\n",
+  "eventLoopOwn": "A: синхронный код\nB: начало async-функции\nC: конец синхронного кода\nD: обработчик Promise\nE: продолжение после await\nG: собственная микрозадача\nF: задача таймера\n",
+  "common": {
+    "ids": [
+      4,
+      13,
+      34
+    ],
+    "total": 3
+  },
+  "variant": {
+    "url": "http://127.0.0.1:5505/api/tasks?completed=true",
+    "ids": [
+      1,
+      10,
+      16,
+      25,
+      31
+    ],
+    "meta": {
+      "total": 5,
+      "filters": {
+        "completed": true,
+        "priority": null,
+        "categoryId": null,
+        "q": ""
+      }
+    }
+  },
+  "initial": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Изучить функции",
+        "completed": true,
+        "priority": "medium",
+        "categoryId": 1
+      },
+      {
+        "id": 4,
+        "title": "Подготовить модель задач",
+        "completed": false,
+        "priority": "high",
+        "categoryId": 2
+      },
+      {
+        "id": 7,
+        "title": "Проверить методы массивов",
+        "completed": false,
+        "priority": "low",
+        "categoryId": 1
+      },
+      {
+        "id": 10,
+        "title": "Оформить README",
+        "completed": true,
+        "priority": "medium",
+        "categoryId": 3
+      },
+      {
+        "id": 13,
+        "title": "Разобрать Promise",
+        "completed": false,
+        "priority": "high",
+        "categoryId": 1
+      },
+      {
+        "id": 16,
+        "title": "Проверить учебный API",
+        "completed": true,
+        "priority": "high",
+        "categoryId": 2
+      },
+      {
+        "id": 19,
+        "title": "Описать контракт запросов",
+        "completed": false,
+        "priority": "medium",
+        "categoryId": 3
+      },
+      {
+        "id": 22,
+        "title": "Подготовить демонстрацию",
+        "completed": false,
+        "priority": "low",
+        "categoryId": 2
+      },
+      {
+        "id": 25,
+        "title": "Исправить обработку ошибок",
+        "completed": true,
+        "priority": "high",
+        "categoryId": 2
+      },
+      {
+        "id": 28,
+        "title": "Добавить фильтры API",
+        "completed": false,
+        "priority": "medium",
+        "categoryId": 2
+      },
+      {
+        "id": 31,
+        "title": "Сверить отчёт",
+        "completed": true,
+        "priority": "low",
+        "categoryId": 3
+      },
+      {
+        "id": 34,
+        "title": "Провести рефакторинг клиента",
+        "completed": false,
+        "priority": "high",
+        "categoryId": 2
+      }
+    ],
+    "categories": [
+      {
+        "id": 1,
+        "name": "Учёба"
+      },
+      {
+        "id": 2,
+        "name": "Проект"
+      },
+      {
+        "id": 3,
+        "name": "Организация"
+      }
+    ],
+    "meta": {
+      "total": 12,
+      "filters": {
+        "completed": null,
+        "priority": null,
+        "categoryId": null,
+        "q": ""
+      }
+    }
+  },
+  "error404": {
+    "kind": "http",
+    "status": 404,
+    "code": "TASK_NOT_FOUND",
+    "details": {
+      "id": 999
+    },
+    "url": "http://127.0.0.1:64556/api/tasks/999"
+  },
+  "offline": {
+    "kind": "network"
+  },
+  "mainOffline": {
+    "code": 1,
+    "text": "Тип: network · Не удалось связаться с сервером.\nПроверяемый адрес API: http://127.0.0.1:64556/api\n"
+  },
+  "mainOnline": {
+    "code": 0,
+    "text": "Индивидуальный вариант 2\nФильтры: { completed: true, priority: null, categoryId: null, q: '' }\nПолучено задач: 5; время: 47.2 мс\n┌─────────┬────┬──────────────────────────────┬───────────┬──────────┬───────────────┐\n│ (index) │ id │ title                        │ completed │ priority │ category      │\n├─────────┼────┼──────────────────────────────┼───────────┼──────────┼───────────────┤\n│ 0       │ 1  │ 'Изучить функции'            │ true      │ 'medium' │ 'Учёба'       │\n│ 1       │ 10 │ 'Оформить README'            │ true      │ 'medium' │ 'Организация' │\n│ 2       │ 16 │ 'Проверить учебный API'      │ true      │ 'high'   │ 'Проект'      │\n│ 3       │ 25 │ 'Исправить обработку ошибок' │ true      │ 'high'   │ 'Проект'      │\n│ 4       │ 31 │ 'Сверить отчёт'              │ true      │ 'low'    │ 'Организация' │\n└─────────┴────┴──────────────────────────────┴───────────┴──────────┴───────────────┘\nКонтрольная ошибка 404: Тип: http · Задача с id 999 не найдена. · HTTP 404 · Код API: TASK_NOT_FOUND\n"
+  },
+  "restarted": 12
+}
